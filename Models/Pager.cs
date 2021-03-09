@@ -26,17 +26,17 @@ namespace WebApiPagination.Models
             TotalPage=(int)Math.Ceiling(decimal.Divide(TotalRecords,PageSize));
             
             if(curentPage<TotalPage)
-            NextPage=url+$"pg?={curentPage+1}";
+            NextPage=url+$"?pg={curentPage+1}";
             else
             NextPage=null;
 
             if(curentPage>1)
-            PreviousPage=url+$"pg?={curentPage-1}";
+            PreviousPage=url+$"?pg={curentPage-1}";
             else
             NextPage=null;
 
-            LastPage=url+$"pg?{TotalPage}";
-            FirstPage=url+"pg?1";
+            LastPage=url+$"?pg={TotalPage}";
+            FirstPage=url+"?pg=1";
             
         }
         
